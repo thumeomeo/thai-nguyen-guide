@@ -6,19 +6,20 @@
 <title>Thái Nguyên Guide — Добро пожаловать / Welcome</title>
 <style>
   :root{
-    --bg:#0f1b16;
-    --card:#152a22;
-    --accent:#5fce8c;
-    --accent2:#ffb454;
-    --text:#eef7f1;
-    --muted:#9fb8ab;
-    --border:rgba(255,255,255,0.08);
+    --bg:#D9EFBD;          /* Tea Green */
+    --card:#F5FBDA;        /* Light Yellow */
+    --accent:#A33E79;      /* Berry Blush */
+    --accent-deep:#450C3F; /* Midnight Violet */
+    --leaf:#B9D175;        /* Willow Green */
+    --text:#450C3F;
+    --muted:#6d5a68;
+    --border:rgba(69,12,63,0.14);
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{
     background:
-      radial-gradient(1200px 600px at 10% -10%, rgba(95,206,140,0.18), transparent 60%),
-      radial-gradient(900px 500px at 110% 10%, rgba(255,180,84,0.12), transparent 60%),
+      radial-gradient(1200px 600px at 10% -10%, rgba(185,209,117,0.55), transparent 60%),
+      radial-gradient(900px 500px at 110% 10%, rgba(163,62,121,0.14), transparent 60%),
       var(--bg);
     color:var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -31,16 +32,10 @@
     position:relative;
     overflow:hidden;
   }
-  .hero::after{
-    content:"";
-    position:absolute; inset:0;
-    background: linear-gradient(180deg, transparent, var(--bg));
-    pointer-events:none;
-  }
   .hero-emoji{font-size:44px; margin-bottom:6px;}
   .hero h1{
     font-size:26px; font-weight:800; letter-spacing:0.2px;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    background: linear-gradient(90deg, var(--accent), var(--accent-deep));
     -webkit-background-clip:text; background-clip:text; color:transparent;
   }
   .hero p{color:var(--muted); margin-top:8px; font-size:14px; line-height:1.6;}
@@ -55,13 +50,13 @@
     transition:all .2s;
   }
   .lang-btn.active{
-    background:var(--accent); color:#0b1710; border-color:var(--accent);
+    background:var(--accent-deep); color:#F5FBDA; border-color:var(--accent-deep);
   }
 
   .tabs{
     position:sticky; top:0; z-index:10;
     display:flex; gap:8px; padding:12px 16px;
-    background:rgba(15,27,22,0.85); backdrop-filter:blur(10px);
+    background:rgba(217,239,189,0.88); backdrop-filter:blur(10px);
     border-bottom:1px solid var(--border);
     overflow-x:auto;
   }
@@ -70,7 +65,7 @@
     padding:10px 14px; border-radius:12px; font-size:13px; font-weight:700;
     background:var(--card); color:var(--muted); cursor:pointer; border:1px solid var(--border);
   }
-  .tab.active{ background:linear-gradient(90deg, var(--accent), #3fae6f); color:#0b1710; }
+  .tab.active{ background:linear-gradient(90deg, var(--accent), var(--accent-deep)); color:#F5FBDA; border-color:transparent; }
 
   .section{ display:none; padding:20px 16px 0; max-width:640px; margin:0 auto; }
   .section.active{ display:block; }
@@ -81,12 +76,12 @@
     border-radius:18px;
     overflow:hidden;
     margin-bottom:18px;
-    box-shadow:0 8px 24px rgba(0,0,0,0.25);
+    box-shadow:0 8px 24px rgba(69,12,63,0.12);
   }
   .card-media{
     height:170px;
     background:
-      linear-gradient(135deg, rgba(95,206,140,0.35), rgba(255,180,84,0.25));
+      linear-gradient(135deg, rgba(185,209,117,0.85), rgba(163,62,121,0.28));
     display:flex; align-items:center; justify-content:center;
     font-size:46px;
     position:relative;
@@ -97,32 +92,24 @@
   .card-body{ padding:16px 18px 18px; }
   .card-tag{
     display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.4px;
-    color:var(--accent2); text-transform:uppercase; margin-bottom:6px;
+    color:var(--accent); text-transform:uppercase; margin-bottom:6px;
   }
-  .card-title{ font-size:19px; font-weight:800; margin-bottom:4px; }
-  .card-title .vn{ color:var(--text); }
+  .card-title{ font-size:19px; font-weight:800; margin-bottom:2px; color:var(--accent-deep); }
+  .card-sub{ font-size:13.5px; color:var(--muted); font-weight:600; margin-bottom:6px; line-height:1.45; }
   .card-dist{ font-size:12px; color:var(--muted); margin-bottom:10px; }
 
   .lang-block{ margin-bottom:10px; }
   .lang-block .flag{ font-size:12px; font-weight:700; color:var(--accent); margin-bottom:2px; display:block; }
-  .lang-block p{ font-size:14px; line-height:1.55; color:#dce8e1; }
+  .lang-block p{ font-size:14px; line-height:1.55; color:#4a2c45; }
   .lang-block.hidden{ display:none; }
 
   .btn-row{ display:flex; gap:10px; margin-top:14px; }
   .btn{
     flex:1; text-align:center; padding:12px 10px; border-radius:12px;
     text-decoration:none; font-size:13px; font-weight:700;
-    background:linear-gradient(90deg, var(--accent), #3fae6f); color:#0b1710;
-  }
-  .btn.secondary{
-    background:transparent; border:1px solid var(--border); color:var(--text);
+    background:linear-gradient(90deg, var(--accent), var(--accent-deep)); color:#F5FBDA;
   }
 
-  .note{
-    max-width:640px; margin:24px auto 0; padding:14px 18px;
-    background:rgba(255,180,84,0.08); border:1px dashed rgba(255,180,84,0.35);
-    border-radius:14px; font-size:12.5px; color:var(--muted); line-height:1.6;
-  }
   .footer{ text-align:center; color:var(--muted); font-size:12px; margin-top:30px; padding:0 20px; }
 </style>
 </head>
@@ -143,8 +130,8 @@
   </div>
 
   <div class="tabs">
-    <div class="tab active" onclick="showSection('food', this)">🍧 Food / Еда</div>
-    <div class="tab" onclick="showSection('experience', this)">⛰️ Experience / Впечатления</div>
+    <div class="tab active" onclick="showSection('food', this)">🍧 Питание</div>
+    <div class="tab" onclick="showSection('experience', this)">⛰️ Лучшие направления</div>
   </div>
 
   <!-- FOOD SECTION -->
@@ -157,7 +144,8 @@
       </div>
       <div class="card-body">
         <div class="card-tag">Dessert · Десерт</div>
-        <div class="card-title vn">Chè &amp; Tào phớ — Chợ Thái</div>
+        <div class="card-title">Chè &amp; Tào phớ — Chợ Thái</div>
+        <div class="card-sub">RU: Че и Тао фо — рынок Тьо Тхай · EN: Che &amp; Tao pho — Cho Thai Market</div>
         <div class="card-dist">📍 In front of the market's main gate (not the underground food court) · ~600m from the Museum of Ethnic Cultures</div>
 
         <div class="lang-block lang-en">
@@ -166,7 +154,7 @@
         </div>
         <div class="lang-block lang-ru">
           <span class="flag">RU</span>
-          <p>Сладкие десертные супы (тя) и нежный соевый пудинг (тао фо) — продаются прямо у главного входа рынка Чо Тхай (не в подземных рядах). Отличное недорогое и освежающее место, всего в 600 м от музея этнических культур.</p>
+          <p>Сладкие десертные супы (че) и нежный соевый пудинг (тао фо) — продаются прямо у главного входа рынка Тьо Тхай (не в подземных рядах). Отличное недорогое и освежающее место, всего в 600 м от музея этнических культур.</p>
         </div>
 
         <div class="btn-row">
@@ -185,7 +173,8 @@
       <div class="card-media">🍃</div>
       <div class="card-body">
         <div class="card-tag">Nature · Природа</div>
-        <div class="card-title vn">Đồi chè Tân Cương</div>
+        <div class="card-title">Đồi chè Tân Cương</div>
+        <div class="card-sub">RU: Чайные холмы Тан Кыонг · EN: Tan Cuong Tea Hills</div>
         <div class="card-dist">📍 ~13km from Thái Nguyên city center · easy motorbike ride</div>
 
         <div class="lang-block lang-en">
@@ -207,7 +196,8 @@
       <div class="card-media">💦</div>
       <div class="card-body">
         <div class="card-tag">Nature · Природа</div>
-        <div class="card-title vn">Suối Cửa Tử</div>
+        <div class="card-title">Suối Cửa Tử</div>
+        <div class="card-sub">RU: Ручей Кыа Ты · EN: Cua Tu Stream</div>
         <div class="card-dist">📍 Định Hóa district · a longer motorbike day-trip from the city</div>
 
         <div class="lang-block lang-en">
@@ -229,7 +219,8 @@
       <div class="card-media">🚇</div>
       <div class="card-body">
         <div class="card-tag">History · История</div>
-        <div class="card-title vn">Đường hầm Pháp — Chợ Đồn</div>
+        <div class="card-title">Đường hầm Pháp — Chợ Đồn</div>
+        <div class="card-sub">RU: Французский туннель — Тьо Дон · EN: French Tunnel — Cho Don</div>
         <div class="card-dist">📍 Chợ Đồn area · check local opening access before visiting</div>
 
         <div class="lang-block lang-en">
@@ -238,7 +229,7 @@
         </div>
         <div class="lang-block lang-ru">
           <span class="flag">RU</span>
-          <p>Старый туннель французской колониальной эпохи возле Чо Дон — интересная остановка для любителей истории. Доступ и условия посещения могут меняться, поэтому лучше уточнить на месте или проверить свежие отзывы перед поездкой.</p>
+          <p>Старый туннель французской колониальной эпохи возле Тьо Дон — интересная остановка для любителей истории. Доступ и условия посещения могут меняться, поэтому лучше уточнить на месте или проверить свежие отзывы перед поездкой.</p>
         </div>
 
         <div class="btn-row">
@@ -251,7 +242,8 @@
       <div class="card-media">🏞️</div>
       <div class="card-body">
         <div class="card-tag">Nature · Природа</div>
-        <div class="card-title vn">Thác Lủng Páng</div>
+        <div class="card-title">Thác Lủng Páng</div>
+        <div class="card-sub">RU: Водопад Лунг Панг · EN: Lung Pang Waterfall</div>
         <div class="card-dist">📍 A scenic waterfall spot · good motorbike day-trip</div>
 
         <div class="lang-block lang-en">
